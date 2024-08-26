@@ -1,6 +1,6 @@
 # Blog Site
 
-It's a simple Web API built with Python framework FastAPI that allows users to add new user, new blog and retrieve all blogs of a particular user with pagination support.
+It's a simple Web API built with Python framework FastAPI and MySQL database that allows users to add new user, new blog and retrieve all blogs of a particular user with pagination support.
 
 ## Installation
 
