@@ -11,3 +11,12 @@ To run this project locally, follow these steps:
    git clone https://github.com/RehberOdhano/Blog-Site.git
    cd Blog-Site
    ```
+2. **Create virtual environment:**
+   ```bash
+   python -m venv venv
+   ```
+3. **Install required packages/libraries**
+   ```bash
+   pip install -r requirements.txt
+   ```  
+   
