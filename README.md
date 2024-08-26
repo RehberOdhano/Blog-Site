@@ -11,12 +11,20 @@ To run this project locally, follow these steps:
    git clone https://github.com/RehberOdhano/Blog-Site.git
    cd Blog-Site
    ```
-2. **Create virtual environment:**
+2. **Create and activate virtual environment:**
    ```bash
    python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 3. **Install required packages/libraries**
    ```bash
    pip install -r requirements.txt
-   ```  
+   ```
+4. **Setup the database**
+   Modify the SQLALCHEMY_DATABASE_URL in config.py file to point to your local database.
+5. **Run the application**
+   ```bash
+   uvicorn main:app --reload
+   ```
+    
    
