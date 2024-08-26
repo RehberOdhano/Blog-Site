@@ -10,14 +10,21 @@ from schemas.blog import BlogSchema
 
 def add_new_blog(request: BlogSchema, db: Session = Depends(get_db)):
     try:
-        new_blog = Blog(**request.model_dump())
+        user = db.query(User).filter(User.id == request.user_id).first()
+        if not user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail=f"User with id {request.user_id} is not found."
+            )
+
+        new_blog = Blog(title=request.title, body=request.body, user_id=request.user_id)
         db.add(new_blog)
         db.commit()
         db.refresh(new_blog)
         return new_blog
     except Exception as e:
         db.rollback()
-        print(f"Error during commit: {e}")
+        print(f"Error: {e}")
         raise
 
 

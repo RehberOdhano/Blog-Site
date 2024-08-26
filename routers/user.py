@@ -2,8 +2,9 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.orm import Session
 
 from config.database import get_db
-from schemas.user import UserSchema, ShowUserSchema
 from repository import user
+from schemas.show_user import ShowUserSchema
+from schemas.user import UserSchema
 
 user_router = APIRouter(prefix="/user", tags=["Users"])
 
